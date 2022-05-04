@@ -3,7 +3,7 @@ trigger:
   
 variables:
   azureSubscriptionEndpoint: azure
-  WebAppName: pytname
+  WebAppName: simple-appservice
   projectRoot: $(System.DefaultWorkingDirectory)
   pythonVersion: '3.9'
   vmImageName: ubuntu-latest
@@ -52,7 +52,6 @@ stages:
       - deployment: DeploymentJob
         pool:
           vmImage: $(vmImageName)
-        environment: $(environmentName)
         strategy:
           runOnce:
             deploy:
@@ -64,7 +63,7 @@ stages:
                 displayName: 'Use Python version'
     
               - task: AzureWebApp@1
-                displayName: 'Deploy Azure Web App : {{ webAppName }}'
+                displayName: 'Deploy Azure Web App :  $(webAppName)'
                 inputs:
                   azureSubscription: $(azureSubscriptionEndpoint)
                   appName: $(webAppName)
