@@ -68,6 +68,6 @@ stages:
               - task: AzureWebApp@1
                 displayName: 'Deploy Azure Web App : {{ webAppName }}'
                 inputs:
-                  azureSubscription: $(azure)
+                  azureSubscription: $(azureSubscriptionEndpoint)
                   appName: $(webAppName)
                   package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
