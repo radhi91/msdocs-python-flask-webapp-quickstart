@@ -1,14 +1,12 @@
 trigger:
   - main
   
-pool:
-  vmImage: ubuntu-latest
-
 variables:
   azureSubscriptionEndpoint: azure
   WebAppName: pytname
   projectRoot: $(System.DefaultWorkingDirectory)
   pythonVersion: '3.9'
+  vmImageName: ubuntu-latest
 
 
 stages:
