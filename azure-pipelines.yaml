@@ -3,7 +3,7 @@ trigger:
   
 variables:
   azureSubscriptionEndpoint: azure
-  WebAppName: simple-appservice
+  WebAppName: simple-pythonservice
   projectRoot: $(System.DefaultWorkingDirectory)
   pythonVersion: '3.9'
   vmImageName: ubuntu-latest
